@@ -1,0 +1,30 @@
+{
+  "compact": false,
+  "presets": [
+    "es2015",
+    "stage-1"
+  ],
+  "plugins": [
+    "transform-decorators-legacy",
+    [
+      "transform-react-jsx",
+      {
+        "pragma": "ssml"
+      }
+    ],
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src",
+          "./config"
+        ],
+        "extensions": [
+          "",
+          ".js",
+          ".jsx"
+        ]
+      }
+    ]
+  ]
+}

@@ -1,0 +1,19 @@
+---
+service: the-real-donald-trump
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+
+  stage: dev
+  region: eu-west-1
+
+package:
+  exclude:
+    - package.json
+
+functions:
+  alexa-skill:
+    handler: index.handler
+    events:
+      - alexaSkill
