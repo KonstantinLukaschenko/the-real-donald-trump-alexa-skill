@@ -19,7 +19,6 @@ export default class TheRealDonaldTrump {
       this.interjections = [
         'oh boy',
         'as you wish',
-        'oh my',
         'oh dear'
       ];
 
