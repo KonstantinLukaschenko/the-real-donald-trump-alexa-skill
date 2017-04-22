@@ -4,7 +4,7 @@ This is a simple Alexa skill for the Amazon Echo. It will read tweets from [@rea
 
 ## Example phrases
 ```
-Alexa, ask the real Donald Trump for some wisdom …
+Alexa, ask the real Donald Trump for some wisdom…
 ```
 
 ## Development
