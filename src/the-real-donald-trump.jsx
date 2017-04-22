@@ -29,7 +29,7 @@ export default class TheRealDonaldTrump {
         'If Obama resigns from office NOW, thereby doing a great service to the country. I will give him free lifetime golf at any one of my courses!',
         'Obama is, without question, the WORST EVER president. I predict he will now do something really bad and totally stupid to show manhood!',
         'MAKE AMERICA GREAT AGAIN!',
-        'An extremely credible source has called my office and told me that BarackObamas birth certificate is a fraud.',
+        'An extremely credible source has called my office and told me that Barack Obamas birth certificate is a fraud.',
         'I have never seen a thin person drinking Diet Coke.'
       ];
 
@@ -69,7 +69,7 @@ export default class TheRealDonaldTrump {
               <say-as interpret-as="interjection">
                   {this.interjections[this.random(this.interjections.length)]}
               </say-as>
-              <break time='1s' />
+              <break time='2s' />
               {this.tweets[this.random(this.tweets.length)]}
           </speak>)
           .card(this.card)
