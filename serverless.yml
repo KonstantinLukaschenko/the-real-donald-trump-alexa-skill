@@ -3,7 +3,7 @@ service: the-real-donald-trump
 
 provider:
   name: aws
-  runtime: nodejs4.3
+  runtime: nodejs6.10
 
   stage: dev
   region: eu-west-1
