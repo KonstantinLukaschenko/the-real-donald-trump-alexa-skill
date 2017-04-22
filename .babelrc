@@ -1,9 +1,6 @@
 {
   "compact": false,
-  "presets": [
-    "es2015",
-    "stage-1"
-  ],
+  "presets": [["env", { "targets": { "node": 4.6 } }]],
   "plugins": [
     "transform-decorators-legacy",
     [
@@ -18,6 +15,7 @@
         "root": [
           "./src",
           "./config"
+
         ],
         "extensions": [
           "",

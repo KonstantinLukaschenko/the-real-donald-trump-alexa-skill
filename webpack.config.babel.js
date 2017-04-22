@@ -20,7 +20,7 @@ export default {
     module: {
         loaders: [
             { test: /\.json$/, loader: 'json-loader' },
-            { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: 'babel-loader' }
+            { test: /\.(js|jsx)$/, loader: 'babel-loader' }
         ]
     },
     plugins: [
