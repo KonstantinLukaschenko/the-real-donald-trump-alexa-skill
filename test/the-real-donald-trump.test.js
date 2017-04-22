@@ -8,6 +8,16 @@ import { secrets } from '../config/secrets';
 describe('TheRealDonaldTrump', function() {
     const session = { application: { applicationId: secrets.applicationId } };
 
+    before(function() {
+        sinon.stub(Math, 'random', function() {
+          return 0.5;
+        });
+    });
+
+    after(function() {
+        Math.random.restore();
+    });
+
     it('LaunchRequest', function() {
         const event = Request.session(session).launchRequest().build();
         return Skill(event).then(response => {
@@ -38,7 +48,6 @@ describe('TheRealDonaldTrump', function() {
 
     it('Wisdom', function() {
         const event = Request.session(session).intent('Wisdom').build();
-        sinon.stub(Math, 'random').callsFake(() => 0.5 );
         return Skill(event).then(response => {
             chai.expect(response).to.deep.equal({
               'response': {
@@ -48,7 +57,7 @@ describe('TheRealDonaldTrump', function() {
                   'type': 'Simple'
                 },
                 'outputSpeech': {
-                  'ssml': '<speak>here you go<break time=\"1s\"/>Obama is, without question, the WORST EVER president. I predict he will now do something really bad and totally stupid to show manhood!</speak>',
+                  'ssml': '<speak><say-as interpret-as=\"interjection\">oh my</say-as><break time=\"1s\"/>Obama is, without question, the WORST EVER president. I predict he will now do something really bad and totally stupid to show manhood!</speak>',
                   'type': 'SSML'
                 },
                 'shouldEndSession': true

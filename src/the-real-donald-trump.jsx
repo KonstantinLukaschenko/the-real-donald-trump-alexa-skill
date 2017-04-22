@@ -17,9 +17,9 @@ export default class TheRealDonaldTrump {
       this.attributes = attributes || {};
 
       this.interjections = [
-        'ok, hold on',
+        'oh boy',
         'as you wish',
-        'here you go',
+        'oh my',
         'oh dear'
       ];
 
@@ -66,9 +66,11 @@ export default class TheRealDonaldTrump {
     wisdom() {
       return say(
           <speak>
-              {this.interjections[Math.floor(Math.random()*this.interjections.length)]}
+              <say-as interpret-as="interjection">
+                  {this.interjections[this.random(this.interjections.length)]}
+              </say-as>
               <break time='1s' />
-              {this.tweets[Math.floor(Math.random()*this.tweets.length)]}
+              {this.tweets[this.random(this.tweets.length)]}
           </speak>)
           .card(this.card)
           .build(this.attributes);
@@ -103,5 +105,9 @@ export default class TheRealDonaldTrump {
             </speak>)
             .card(this.card)
             .build(this.attributes);
+    }
+
+    random(elements) {
+      return Math.floor(Math.random() * elements);
     }
 }
