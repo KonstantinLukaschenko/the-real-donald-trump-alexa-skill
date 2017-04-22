@@ -1,4 +1,4 @@
-# The Real Donal Trump
+# The Real Donal Trump [![Build Status](https://travis-ci.org/KonstantinLukaschenko/the-real-donald-trump-alexa-skill.svg?branch=master)](https://travis-ci.org/KonstantinLukaschenko/the-real-donald-trump-alexa-skill)
 
 This is a simple Alexa skill for the Amazon Echo. It will read tweets from [@realDonaldTrump](https://twitter.com/realDonaldTrump).
 
