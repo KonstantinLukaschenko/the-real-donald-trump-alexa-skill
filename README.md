@@ -29,4 +29,4 @@ Uses `webpack` to build the AWS lambda function in `dist/index.js`.
 npm run deploy
 ```
 
-Uses `serverless` to package and deploy it the lambda function directly to AWS.
+Uses `serverless` to package and deploy the lambda function directly to AWS.
