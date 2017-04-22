@@ -1,3 +1,3 @@
 export const secrets = {
-  applicationId: ''
+  applicationId: 'xxx'
 }
