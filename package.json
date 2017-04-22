@@ -6,7 +6,7 @@
   "description": "Simple alexa skill, that will read some tweets from @realDonaldTrump.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/olmobrutall/hackNEXT"
+    "url": "https://github.com/KonstantinLukaschenko/the-real-donald-trump-alexa-skill/"
   },
   "main": "build/index.js",
   "scripts": {
