@@ -47,7 +47,7 @@ export default class TheRealDonaldTrump {
         return ask(
             <speak>
                 This Alexa skill provides you with the daily wisdom by reading
-                tweets from the real donald trump. Ask me for some wisdom now.
+                tweets from the real Donald Trump. Ask me for some wisdom now.
             </speak>)
             .reprompt(
             <speak>
@@ -66,10 +66,10 @@ export default class TheRealDonaldTrump {
       return say(
           <speak>
               <say-as interpret-as="interjection">
-                  {this.interjections[this.random(this.interjections.length)]}
+                  {this.random(this.interjections)}
               </say-as>
               <break time='2s' />
-              {this.tweets[this.random(this.tweets.length)]}
+              {this.random(this.tweets)}
           </speak>)
           .card(this.card)
           .build(this.attributes);
@@ -106,7 +106,7 @@ export default class TheRealDonaldTrump {
             .build(this.attributes);
     }
 
-    random(elements) {
-      return Math.floor(Math.random() * elements);
+    random(array) {
+      return array[Math.floor(Math.random() * array.length)];
     }
 }

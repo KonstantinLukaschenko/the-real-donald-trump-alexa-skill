@@ -1,27 +1,27 @@
 import 'babel-polyfill';
 import Request from 'alexa-request';
 import Skill from '../src/the-real-donald-trump';
-import chai from 'chai';
-import sinon from 'sinon';
+import { expect } from 'chai';
+import { stub } from 'sinon';
 import { secrets } from '../config/secrets';
 
-describe('TheRealDonaldTrump', function() {
+describe('TheRealDonaldTrump', () => {
     const session = { application: { applicationId: secrets.applicationId } };
 
-    before(function() {
-        sinon.stub(Math, 'random', function() {
+    before(() => {
+        stub(Math, 'random', () => {
           return 0.5;
         });
     });
 
-    after(function() {
+    after(() => {
         Math.random.restore();
     });
 
-    it('LaunchRequest', function() {
+    it('LaunchRequest', () => {
         const event = Request.session(session).launchRequest().build();
         return Skill(event).then(response => {
-            chai.expect(response).to.deep.equal({
+            expect(response).to.deep.equal({
               'response': {
                 'card': {
                   'content': '... provides you with the daily wisdom.',
@@ -29,7 +29,7 @@ describe('TheRealDonaldTrump', function() {
                   'type': 'Simple'
                 },
                 'outputSpeech': {
-                  'ssml': '<speak>This Alexa skill provides you with the daily wisdom by reading tweets from the real donald trump. Ask me for some wisdom now.</speak>',
+                  'ssml': '<speak>This Alexa skill provides you with the daily wisdom by reading tweets from the real Donald Trump. Ask me for some wisdom now.</speak>',
                   'type': 'SSML'
                 },
                 'reprompt': {
@@ -46,10 +46,10 @@ describe('TheRealDonaldTrump', function() {
         });
     });
 
-    it('Wisdom', function() {
+    it('Wisdom', () => {
         const event = Request.session(session).intent('Wisdom').build();
         return Skill(event).then(response => {
-            chai.expect(response).to.deep.equal({
+            expect(response).to.deep.equal({
               'response': {
                 'card': {
                   'content': '... provides you with the daily wisdom.',
@@ -68,10 +68,10 @@ describe('TheRealDonaldTrump', function() {
         });
     });
 
-    it('CancelIntent', function() {
+    it('CancelIntent', () => {
         const event = Request.session(session).intent('AMAZON.CancelIntent').build();
         return Skill(event).then(response => {
-            chai.expect(response).to.deep.equal({
+            expect(response).to.deep.equal({
               'response': {
                 'card': {
                   'content': '... provides you with the daily wisdom.',
@@ -96,10 +96,10 @@ describe('TheRealDonaldTrump', function() {
         });
     });
 
-    it('StopIntent', function() {
+    it('StopIntent', () => {
         const event = Request.session(session).intent('AMAZON.StopIntent').build();
         return Skill(event).then(response => {
-            chai.expect(response).to.deep.equal({
+            expect(response).to.deep.equal({
               'response': {
                 'card': {
                   'content': '... provides you with the daily wisdom.',
