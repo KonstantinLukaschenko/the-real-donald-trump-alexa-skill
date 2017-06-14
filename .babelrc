@@ -1,28 +1,12 @@
 {
   "compact": false,
-  "presets": [["env", { "targets": { "node": 6.10 } }]],
+  "presets": [["env", { "targets": { "node": "6.10" } }]],
   "plugins": [
     "transform-decorators-legacy",
-    [
-      "transform-react-jsx",
-      {
-        "pragma": "ssml"
-      }
-    ],
-    [
-      "module-resolver",
-      {
-        "root": [
-          "./src",
-          "./config"
-
-        ],
-        "extensions": [
-          "",
-          ".js",
-          ".jsx"
-        ]
-      }
+    ["transform-jsx", { "function": "ssml", "useVariables": true }],
+    ["module-resolver", {
+      "root": [ "./src", "./config" ],
+      "extensions": [ "", ".js", ".jsx" ]}
     ]
   ]
 }

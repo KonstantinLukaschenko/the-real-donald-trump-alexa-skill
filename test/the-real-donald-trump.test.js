@@ -57,7 +57,7 @@ describe('TheRealDonaldTrump', () => {
                   'type': 'Simple'
                 },
                 'outputSpeech': {
-                  'ssml': '<speak><say-as interpret-as=\"interjection\">as you wish</say-as><break time=\"2s\"/>Obama is, without question, the WORST EVER president. I predict he will now do something really bad and totally stupid to show manhood!</speak>',
+                  'ssml': '<speak><say-as interpret-as="interjection">as you wish</say-as><break strength="strong"/>Obama is, without question, the WORST EVER president. I predict he will now do something really bad and totally stupid to show manhood!</speak>',
                   'type': 'SSML'
                 },
                 'shouldEndSession': true

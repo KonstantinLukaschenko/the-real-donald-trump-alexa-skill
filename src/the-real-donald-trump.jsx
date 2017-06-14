@@ -1,6 +1,6 @@
 import { Skill, Intent, Launch, SessionEnded } from 'alexa-annotations';
 import { say, ask } from 'alexa-response';
-import ssml from 'alexa-ssml-jsx';
+import ssml from 'ssml-jsx';
 import { secrets } from '../config/secrets';
 
 /**
@@ -46,7 +46,7 @@ export default class TheRealDonaldTrump {
     help() {
         return ask(
             <speak>
-                This Alexa skill provides you with the daily wisdom by reading
+                This Alexa skill provides you with the daily wisdom by reading 
                 tweets from the real Donald Trump. Ask me for some wisdom now.
             </speak>)
             .reprompt(
@@ -68,7 +68,7 @@ export default class TheRealDonaldTrump {
               <say-as interpret-as="interjection">
                   {this.random(this.interjections)}
               </say-as>
-              <break time='2s' />
+              <break strength='strong' />
               {this.random(this.tweets)}
           </speak>)
           .card(this.card)
